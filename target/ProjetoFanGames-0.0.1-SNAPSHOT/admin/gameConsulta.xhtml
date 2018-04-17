@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	
+	<ui:composition template="../template/tempAdmin.xhtml">
+		<ui:define name="corpo">
+				<h:head>
+					<h:outputStylesheet library="css" name="gameConsultaAdmin.css"></h:outputStylesheet>
+				</h:head>
+				<div class="container-fluid">
+					<h:form id="game-dados">
+						<div class="row">
+							<div class="col-sm-offset-2 col-sm-8">
+								<h:messages class="msg-validation"/>
+								<div id="consulta-game" class="panel panel-default">
+									<div id="panel-head-consulta-game" class="panel-heading">
+										<h:outputLabel value="Game: #{gameConsultaAdminBean.game.nome}"/>
+									</div>
+									<div class="form-horizontal">
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="nome-game" value="Nome " />
+											<div class="col-sm-3">
+												<h:inputText id="nome-game" class="form-control" value="#{gameConsultaAdminBean.game.nome}" disabled="true"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="categoria-game" value="Categoria " />
+											<div class="col-sm-3">
+												<h:selectOneMenu id="categoria-game" class="form-control" value="#{gameConsultaAdminBean.game.categoria}">
+													<f:selectItem itemValue="#{gameConsultaAdminBean.game.categoria}" />
+													<f:selectItems value="#{gameConsultaAdminBean.categorias}" var="categoria" itemValue="#{categoria}"/>
+												</h:selectOneMenu>
+											</div>
+										</div>
+										<br/>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="faixa-game" value="Faixa etária "/>
+											<div class="col-sm-3">
+												<h:selectOneMenu id="faixa-game" class="form-control" value="#{gameConsultaAdminBean.game.faixa}">
+													<f:selectItem itemValue="#{gameConsultaAdminBean.game.faixa}"/>
+													<f:selectItems value="#{gameConsultaAdminBean.faixas}" var="faixa" itemValue="#{faixa}"/>
+												</h:selectOneMenu>
+											</div>
+										</div>
+										<br/>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="desenvolvedor-game" value="Desenvolvedor "/>
+											<div class="col-sm-3">
+												<h:selectOneMenu id="desenvolvedor-game" class="form-control">
+													<f:selectItems value="#{gameConsultaAdminBean.desenvs}" />
+												</h:selectOneMenu>
+											</div>
+										</div>
+										<br/>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="consoles-game" value="Consoles "/>
+											<div class="col-sm-3">
+												<h:dataTable value="#{gameConsultaAdminBean.consoles}" var="console">
+													<h:column>
+														<h:outputLabel value="#{console}"  class="form-control" id="consoles-game"/>
+													</h:column>
+												</h:dataTable>
+											</div>
+										</div>
+										<br/>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="desc-game" value="Descrição "/>
+											<div class="col-sm-5">
+												<h:inputTextarea id="desc-game" value="#{gameConsultaAdminBean.game.descricao}" class="form-control" rows="8" required="true" requiredMessage="O game deve ter uma descrição!"/>
+											</div>
+										</div>
+										<h:commandButton type="submit" style="margin-bottom: 10px;" class="col-sm-offset-4 btn btn-success" value="Atualizar">
+											<f:ajax execute="@form" render=":game-dados" listener="#{gameConsultaAdminBean.atualizaDadosGame}"></f:ajax>
+										</h:commandButton>
+									</div>
+								</div>
+							</div>
+						</div>
+					</h:form>
+					<h:form enctype="multipart/form-data" id="imagens-game">
+						<div class="row">
+							<div class="col-sm-offset-2 col-sm-8">
+								<div id="consulta-img-game" class="panel panel-default">
+									<div id="panel-head-consulta-game" class="panel-heading">Imagens do game</div>
+									<div class="form-horizontal">
+										<div class="form-group" id="labels-imagens-game">
+											<h:outputLabel class="col-sm-offset-1 col-sm-2 control-label" value="Imagens armazenadas: "/>
+											<div class="col-sm-8">
+												<div class="form-inline">
+													<h:outputLabel class="control-label" value="1-"/>
+													<h:outputLabel class="control-label" value="#{gameConsultaAdminBean.imagens[0].tituloImagem}" rendered="#{not empty gameConsultaAdminBean.imagens}"/> / 
+													<h:outputLabel class="control-label" value="2-"/> 
+													<h:outputLabel class="control-label" value="#{gameConsultaAdminBean.imagens[1].tituloImagem}" rendered="#{not empty gameConsultaAdminBean.imagens}"/> / 
+													<h:outputLabel class="control-label" value="3-"/> 
+													<h:outputLabel class="control-label" value="#{gameConsultaAdminBean.imagens[2].tituloImagem}" rendered="#{not empty gameConsultaAdminBean.imagens}"/> /
+													<h:outputLabel class="control-label" value="4-"/> 
+													<h:outputLabel class="control-label" value="#{gameConsultaAdminBean.imagens[3].tituloImagem}" rendered="#{not empty gameConsultaAdminBean.imagens}"/> 
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-1 col-sm-2 control-label" for="img-game1" value="Imagens "/>
+											<div class="col-sm-5">
+												
+												<h:inputFile  id="img-game1" class="form-control"  value="#{gameConsultaAdminBean.img1}" label="Escolha" >
+													<f:ajax execute="@this" listener="#{gameConsultaAdminBean.insereImagensGame}" render=":imagens-game"></f:ajax>
+												</h:inputFile>
+												<h:inputFile id="img-game2" class="form-control"  value="#{gameConsultaAdminBean.img2}" label="Escolha">
+													<f:ajax execute="@this" listener="#{gameConsultaAdminBean.insereImagensGame}" render=":imagens-game"></f:ajax>
+												</h:inputFile>
+												<h:inputFile id="img-game3" class="form-control"  value="#{gameConsultaAdminBean.img3}" label="Escolha">
+													<f:ajax execute="@this" listener="#{gameConsultaAdminBean.insereImagensGame}" render=":imagens-game"></f:ajax>
+												</h:inputFile>
+												<h:inputFile id="img-game4" class="form-control"  value="#{gameConsultaAdminBean.img4}" label="Escolha">
+													<f:ajax execute="@this" listener="#{gameConsultaAdminBean.insereImagensGame}" render=":imagens-game"></f:ajax>
+												</h:inputFile>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</h:form>
+					<div class="row">
+						<div class="col-sm-offset-1 col-sm-10">
+							<div id="cadastro-video-game" class="panel panel-default">
+								<div class="panel-heading" >Cadastro Vídeos do Game</div>
+								<h:form id="form-cadastro-video" class="form-inline">
+									<h:messages class="msg-validation"/>	
+									<div class="form-group">
+										<h:outputLabel for="youtuber-game" class="control-label" value="Youtuber: "/>	
+										<h:selectOneMenu id="youtuber-game" class="form-control" value="#{gameConsultaAdminBean.video.youtuber.nome}">
+											<f:selectItems value="#{gameConsultaAdminBean.listaYoutubers}" var="youtu" itemValue="#{youtu}"/>
+										</h:selectOneMenu>
+									</div>	
+									<div class="form-group">
+										<h:inputText id="titulo-video" class="form-control" a:placeholder="titulo" value="#{gameConsultaAdminBean.video.titulo}" 
+										required="true" requiredMessage="O título do video deve ser informado!" validatorMessage="O título do video deve conter no mínimo 3 e no máximo 100 caracteres">
+											<f:validateLength maximum="100" minimum="3" />
+										</h:inputText>
+									</div>	
+								    <div class="form-group">							    								
+										<h:inputText id="link_video" class="form-control" a:placeholder="Link do vídeo" value="#{gameConsultaAdminBean.video.link}" 
+											required="true" requiredMessage="O link do video deve ser informado!" validatorMessage="O link do video deve conter no mínimo 8 e no máximo 120 caracteres">
+											<f:validateLength maximum="120" minimum="8" />
+										</h:inputText>
+									</div>
+									<div class="form-group">	
+										<h:outputLabel for="data_pub" value="Data de publicação: "/>
+										<p:inputMask mask="99/99/9999" id="data_pub" value="#{gameConsultaAdminBean.video.publicacao}" required="true" requiredMessage="A data de publicação do video deve ser informada!">
+											<f:convertDateTime dateStyle="medium"/>
+										</p:inputMask>
+									</div>							
+									<h:commandButton type="submit" class="btn btn-success" value="Adicionar" actionListener="#{gameConsultaAdminBean.cadastraVideoGame}" >
+										<f:ajax execute="@form" render=":form-table :form-cadastro-video"/>
+									</h:commandButton>				
+								</h:form>
+								<h:form id="form-table">
+									<div class="table-responsive">	
+										<p:dataTable styleClass="table" value="#{gameConsultaAdminBean.videoGames}" var="video" rendered="#{not empty gameConsultaAdminBean.videoGames}">
+											<f:facet name="header">Youtuber videos</f:facet>
+											<p:column headerText="Nome Youtuber">
+												<h:outputLabel value="#{video.youtuber.nome}"/>
+											</p:column>
+											<p:column headerText="Data de Publicação">
+												<h:outputLabel value="#{video.publicacao}">
+													<f:convertDateTime dateStyle="medium" />
+												</h:outputLabel>
+											</p:column>
+											<p:column headerText="Link Video">
+													<h:outputLabel value="#{video.link}"/>
+											</p:column>
+											<p:column>
+													<h:commandLink value="Remover" >
+														<f:ajax execute="@form" render=":form-table" listener="#{gameConsultaAdminBean.removeVideoGame({video.id})}"></f:ajax>
+													</h:commandLink>
+											</p:column>
+										</p:dataTable>	
+									</div>	
+								</h:form>
+							</div>
+						</div>
+					</div>
+				</div>
+		</ui:define>
+		
+	</ui:composition>
+	
+</html>

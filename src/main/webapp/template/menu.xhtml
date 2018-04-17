@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+		<ui:composition >
+                 <h:head>
+                     <h:outputStylesheet library="css" name="menu.css"/>
+                 </h:head>
+                 <h:form>
+					<nav class="navbar navbar-default">
+						<div class="container-fluid">
+							<div class="row" style="background-color: black;">
+							<div class="navbar-header" id="navbar-size-xs">
+								<button type="button"  class="navbar-toggle collapsed" data-toggle="collapse"
+									 data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+									<span class="sr-only">Toggle navigation</span>	
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							<div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav">
+									<li class="dropdown">
+										<a id="microsoft-link" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+											aria-expanded="false" aria-haspopup="false">Microsoft<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><h:commandLink value="Xbox" styleClass="xbox-link" action="#{indexBean.telaTodosgames('Xbox')}"/></li>
+											<li><h:commandLink value="Xbox 360" action="#{indexBean.telaTodosgames('Xbox 360')}"/></li>
+											<li><h:commandLink value="Xbox One" action="#{indexBean.telaTodosgames('Xbox One')}"/></li>
+										</ul>
+									</li>
+									<li class="dropdown">
+										<a href="#" id="playstation-link" class="dropdown-toggle" data-toggle="dropdown" role="button"
+											aria-expanded="false" aria-popup="true">Playstation<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><h:commandLink value="Playstation" styleClass="play-console" action="#{indexBean.telaTodosgames('Playstation')}"/></li>
+											<li><h:commandLink value="Playstation 2" styleClass="play-console" action="#{indexBean.telaTodosgames('Playstation 2')}"/></li>
+											<li><h:commandLink value="Playstation 3" styleClass="play-console" action="#{indexBean.telaTodosgames('Playstation 3')}"/></li>
+											<li><h:commandLink value="Playstation 4" styleClass="play-console" action="#{indexBean.telaTodosgames('Playstation 4')}"/></li>
+										</ul>
+									</li>
+									<li class="dropdown">
+										<a href="#" id="nintendo-link" class="dropdown-toggle" data-toggle="dropdown" role="button"
+											aria-haspopup="true" aria-expanded="false">Nintendo<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><h:commandLink value="Nintendo" action="#{indexBean.telaTodosgames('Nintendo')}"/></li>
+											<li><h:commandLink value="Super Nintendo" action="#{indexBean.telaTodosgames('Super Nintendo')}"/></li>
+											<li><h:commandLink value="Nintendo 64" action="#{indexBean.telaTodosgames('Nintendo 64')}"/></li>
+											<li><h:commandLink value="Game Cube" action="#{indexBean.telaTodosgames('Game Cube')}"/></li>
+											<li><h:commandLink value="Nintendo Wii" action="#{indexBean.telaTodosgames('Nintendo Wii')}"/></li>
+										</ul>
+									</li>
+									<li class="dropdown">
+										<a id="sega-link" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+											aria-haspopup="true" aria-expanded="false">Sega<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><h:commandLink value="Master System" action="#{indexBean.telaTodosgames('Master System')}"/></li>
+											<li><h:commandLink value="Mega Drive" action="#{indexBean.telaTodosgames('Mega Drive')}"/></li>
+											<li><h:commandLink value="Sega Saturno" action="#{indexBean.telaTodosgames('Sega Saturn')}"/></li>
+											<li><h:commandLink value="Dreamcast" action="#{indexBean.telaTodosgames('Dreamcast')}"/></li>
+										</ul>
+									</li>
+									<li class="simple-link"><h:commandLink value="Indie" styleClass="indy"/></li>
+								</ul>
+							</div>  
+							</div>
+						</div>         
+					</nav>
+			</h:form>		
+		</ui:composition>
+</html>

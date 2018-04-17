@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+
+#lateral{
+	display: block;
+	float:left;
+	position: relative
+}
+
+#conteudo{
+	display: block;
+	float: left;
+	width: 500px;
+	position:relative;
+	margin-left: 10px;
+	text-indent: 20px;
+}
+
+h1{
+	color: black;
+	font-family: sans-serif;
+	font-size: 30px;
+}
+
+.table{
+	width: 590px;
+}
+
+.titulo_console{
+	color: black;
+	font-size: 25px;
+}
+
+#span_com{
+	margin-left: 20px;
+}

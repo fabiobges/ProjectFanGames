@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<ui:composition template="/template/tempPrincipal.xhtml">
+		<ui:define name="corpo">
+			
+			
+			<div class="container">
+				<h:form id="form-corpo">
+					<div class="row">
+						<div class="col-sm-1">
+						
+						</div>
+						<div class="col-sm-10">
+							<H1 id="titulo">Todos os Jogos: </H1>
+							<h:outputLabel styleClass="titulo_console" value="#{todosGamesBean.console.nome}"/>
+							<br/>
+							<span id="span_com">
+								<p:commandLink value="A" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="A" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</p:commandLink> - 
+								<h:commandLink value="B" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="B" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="C" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="C" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="D" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="D" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="E" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="E" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="F" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="F" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="G" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="G" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@this" render=":form-corpo"/>
+								</h:commandLink> - 
+								<h:commandLink value="H" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="H" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@this" render=":form-corpo"/>
+								</h:commandLink> - 
+								<h:commandLink value="I" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="I" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@this" render=":form-corpo"/>
+								</h:commandLink> - 
+								<h:commandLink value="J" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="J" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="K" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="K" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="L" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="L" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="M" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="M" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="N" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="N" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="O" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="O" target="#{todosGamesBean.letra}"/>
+								<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="P" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="P" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="Q" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="Q" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="R" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="R" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="S" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="S" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="T" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="T" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="U" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="U" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="V" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="V" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="X" action="#{todosGamesBean.listaGames}">
+									
+									<f:setPropertyActionListener value="X" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="Y" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="Y" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="W" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="W" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="Z" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="Z" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink> - 
+								<h:commandLink value="0-9" action="#{todosGamesBean.listaGames}">
+									<f:setPropertyActionListener value="0" target="#{todosGamesBean.letra}"/>
+									<f:ajax execute="@form" render=":form-tabela"/>
+								</h:commandLink>
+							</span>
+						</div>
+						<div class="col-sm-1">
+						
+						</div>
+					</div>
+				</h:form>
+				<h:form id="form-tabela" >
+					<div class="row">
+						<div class="col-sm-1">
+						
+						</div>
+						<div class="col-sm-10">
+							<h:dataTable styleClass="table" var="game" value="#{todosGamesBean.games}" id="table" rules="rows">
+							    <h:column headerText="Nome">
+							    <f:facet name="header">Nome do Game</f:facet>
+							    	<h:commandLink  action="#{todosGamesBean.telaGame}" immediate="true">
+							        	<h:outputText value="#{game.nome}"/>
+							        	<f:setPropertyActionListener value="#{game.nome}" target="#{todosGamesBean.game}"/>
+							 		</h:commandLink>
+							    </h:column>
+							    
+							    <h:column headerText="Faixa Etária" >
+							    	<f:facet name="header">Faixa etária</f:facet>
+							        <h:outputText value="#{game.faixa}" />
+							    </h:column>
+							 
+							    <h:column headerText="Categoria">
+							    	<f:facet name="header">Categoria</f:facet>
+							        <h:outputText value="#{game.categoria}" />
+							    </h:column>
+							</h:dataTable>	
+						</div>
+						<div class="col-sm-1">
+						
+						</div>
+					</div>
+				</h:form>
+			</div>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+		</ui:define>
+	</ui:composition>
+</html>

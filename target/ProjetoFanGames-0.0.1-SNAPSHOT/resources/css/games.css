@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+
+.panel-formulario-game{
+	padding-top: 18px;
+}
+
+.panel-formulario-video{
+	padding-left: 18px;
+	padding-top: 18px;
+}
+
+
+
+.video-adiciona{
+	position: relative;
+	margin-top: 30px;
+	width: 180px;;
+}
+
+.games-text{
+		width: 180px;
+		height: 100px;
+}
+
+.msg-validation{
+	font-weight: bold;
+	color: #B40404;
+	background-color: #F5A9A9;
+	border-radius: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#form-filtro-game{
+	padding: 10px;
+}
+
+.inputs-filtro{
+	margin-left: 8px;
+}
+
+@media (min-width: 960px){
+	.video-adiciona{
+		margin-left: 150px;
+		margin-top: 0px;
+		width: 100%;
+	}
+	
+	.games-text{
+		width: 100%;
+	}
+}
+

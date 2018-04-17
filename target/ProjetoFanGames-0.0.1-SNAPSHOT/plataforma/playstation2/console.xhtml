@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	<ui:composition template="/template/tempPrincipal.xhtml">
+		<ui:define name="corpo">
+
+			<h:form>
+			<f:param name="parametro" value="Xbox 360" />
+			<p:graphicImage styleClass="photo" library="imagens" name="Xbox360.jpg"/>
+			<aside id="lateral">
+			    <p:menu>
+			        <p:submenu label="Console">
+			            <p:menuitem value="Todos os games" action="#{xbox360Bean.telaConsoleGames}" ajax="false" >
+			            	<f:setPropertyActionListener value="0" target="#{xbox360Bean.letra}"/>
+			            </p:menuitem>
+			            <p:menuitem value="Dados Técnicos" />
+			        </p:submenu>
+			        <p:submenu label="Games Categoria">
+			            <p:menuitem value="Ação" />
+			            <p:menuitem value="Aventura" />
+			            <p:menuitem value="Horror" />
+			            <p:menuitem value="RPG" />
+			            <p:menuitem value="Shmup" />
+			            <p:menuitem value="Esporte" />
+			        </p:submenu>
+			        <p:submenu label="Curiosidades">
+			            <p:menuitem value="Games mais vendidos" />
+			        </p:submenu>
+			    </p:menu>
+			    <br/>
+			</aside>	
+			<section id="conteudo">
+				<h1 id="xbox360_titulo">Xbox 360</h1>
+				<br/>
+				<p:outputLabel value="#{xbox360Bean.console.descricao}"/>
+			</section>
+			
+		    </h:form>
+
+		</ui:define>
+	</ui:composition>
+
+</html>

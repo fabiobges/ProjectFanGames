@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<ui:composition template="/template/tempPrincipal.xhtml">
+		<ui:define name="corpo">
+			<h:form>
+				<aside id="lateral">
+			    <p:menu>
+			        <p:submenu label="Console">
+			            <p:menuitem value="Todos os games"  />
+			            <p:menuitem value="Dados Técnicos" />
+			        </p:submenu>
+			        <p:submenu label="Games Categoria">
+			            <p:menuitem value="Ação" />
+			            <p:menuitem value="Aventura" />
+			            <p:menuitem value="Horror" />
+			            <p:menuitem value="RPG" />
+			            <p:menuitem value="Shmup" />
+			            <p:menuitem value="Esporte" />
+			        </p:submenu>
+			        <p:submenu label="Curiosidades">
+			            <p:menuitem value="Games mais vendidos" />
+			        </p:submenu>
+			    </p:menu>
+			    <br/>
+			</aside>
+			</h:form>
+			<section id="conteudo">
+			<h:form id="form-corpo">
+			
+				<H1 id="titulo">Todos os Jogos</H1>
+				<h:outputLabel styleClass="titulo_console" value="#{xbox360Bean.console.nome}"/>
+				<br/>
+				<span id="span_com">
+				<h:commandLink value="A" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="A" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="B" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="B" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="C" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="C" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="D" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="D" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="E" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="E" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="F" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="F" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="G" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="G" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@this" render=":form-corpo"/>
+				</h:commandLink> - 
+				<h:commandLink value="H" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="H" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@this" render=":form-corpo"/>
+				</h:commandLink> - 
+				<h:commandLink value="I" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="I" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@this" render=":form-corpo"/>
+				</h:commandLink> - 
+				<h:commandLink value="J" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="J" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="K" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="K" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="L" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="L" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="M" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="M" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="N" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="N" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="O" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="O" target="#{xbox360Bean.letra}"/>
+				<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="P" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="P" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="Q" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="Q" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="R" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="R" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="S" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="S" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="T" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="T" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="U" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="U" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="V" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="V" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="X" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="X" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="Y" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="Y" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="W" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="W" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="Z" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="Z" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink> - 
+				<h:commandLink value="0-9" action="#{xbox360Bean.listaGames}">
+					<f:setPropertyActionListener value="0" target="#{xbox360Bean.letra}"/>
+					<f:ajax execute="@form" render=":form-tabela"/>
+				</h:commandLink>
+				</span>
+			</h:form>
+			<h:form id="form-tabela" >
+				<h:dataTable styleClass="table" var="game" value="#{xbox360Bean.games}" id="table" rules="rows">
+				    <h:column headerText="Nome">
+				    <f:facet name="header">Nome do Game</f:facet>
+				    	<h:commandLink  action="#{gameBean.telaGame}" immediate="true">
+				        	<h:outputText value="#{game.nome}"/>
+				 		</h:commandLink>
+				    </h:column>
+				    
+				    <h:column headerText="Faixa Etária" >
+				    	<f:facet name="header">Faixa etária</f:facet>
+				        <h:outputText value="#{game.faixa}" />
+				    </h:column>
+				 
+				    <h:column headerText="Categoria">
+				    	<f:facet name="header">Categoria</f:facet>
+				        <h:outputText value="#{game.categoria}" />
+				    </h:column>
+				</h:dataTable>	
+			</h:form>
+			</section>
+		</ui:define>
+	</ui:composition>
+</html>

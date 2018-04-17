@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+#input-nome-youtuber-group{
+	margin-top: 15px;
+}
+
+#panel-head-cadastro-youtuber{
+	padding-bottom: 15px;
+}
+
+.bt-cadastra-youtu{
+	margin-bottom: 15px;
+	background-color: white;
+}
+
+.msg-validation{
+	font-weight: bold;
+	color: #B40404;
+	background-color: #F5A9A9;
+	border-radius: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

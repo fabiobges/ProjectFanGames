@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	
+	
+	<ui:composition template="../template/tempAdmin.xhtml">
+		<ui:define name="corpo">
+			
+			<h:head>
+				<h:outputStylesheet library="css" name="consoleAdmin.css"/>
+				<h:outputScript library="js" name="consoleAdmin.js"/>
+				<h:outputScript library="js" name="maskedinput/dist/jquery.maskedinput.js"/>
+				
+			</h:head>
+			<div class="container-fluid">
+				<h:form id="form-cadastro-console">
+				<div class="row">
+					<div class="form-horizontal">	
+						<h:messages class="msg-validation"/>
+							<fieldset>
+							<div class="form-group">
+								<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label"  for="input-nome-console">Nome* </h:outputLabel>
+								<div class="col-sm-3">		
+									<h:inputText  class="form-control" id="input-nome-console" value="#{consoleAdminBean.console.nome}" 
+									required="true" requiredMessage="O nome do console deve ser informado!" validatorMessage="O nome deve conter no mÃ¡ximo 50 caracteres!">
+										<f:validateLength maximum="50" minimum="2"/>
+									</h:inputText>								
+								</div>
+							</div>
+							<div class="form-group">
+								<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="input-dt-lancamento-console">Data de LanÃ§amento* </h:outputLabel>
+								<div class="col-sm-2">					
+									<h:inputText  class="form-control dt-lancamento-console" id="input-dt-lancamento-console" value="#{consoleAdminBean.console.dt_lancamento}" required="true" requiredMessage="A data de lanÃ§amento do console deve ser informada!"
+									    validatorMessage="Data incorreta">
+										
+										<f:convertDateTime dateStyle="medium" pattern="dd/MM/yyyy"/>
+									</h:inputText>				
+								</div>
+							</div>
+							<div class="form-group">
+								<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="select-empresa-console" value="Empresa* "/>
+								<div class="col-sm-2">	
+									<h:selectOneMenu id="select-empresa-console" class="form-control" value="#{consoleAdminBean.console.empresa.nome}">
+										<f:selectItem itemLabel="Empresa" itemValue="-1"/>
+										<f:selectItems value="#{consoleAdminBean.mapEmpresas}" itemValue=""/>
+									</h:selectOneMenu>									
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-4 col-sm-2">	
+									<h:commandLink  actionListener="#{consoleAdminBean.cadastraConsole}" class="btn btn-success" value="Cadastrar">
+										<f:ajax execute="@form" render=":form-console-table :form-cadastro-console"/>
+									</h:commandLink>
+								</div>
+							</div>
+							</fieldset>
+						
+					</div>
+				</div>
+				</h:form>
+				<h:form id="form-console-table">
+					<div class="row">
+						<div class="col-sm-pull-5 col-sm-push-5 col-sm-2">
+							<h1>Consulta</h1>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-pull-1 col-sm-push-1 col-sm-10">
+								<h:dataTable id="console-table" styleClass="table" value="#{consoleAdminBean.consoles}" var="console" rendered="#{not empty consoleAdminBean.consoles}">
+									<f:facet name="header">Consoles Fan Games</f:facet>		
+									<h:column headerText="Código">
+										<h:outputLabel value="#{console.id}"/>
+									</h:column>
+									<h:column headerText="Nome">
+										<h:outputLabel value="#{console.nome}"/>
+									</h:column>
+									<h:column headerText="Data de LanÃ§amento">
+										<h:outputLabel value="#{console.dt_lancamento}">
+											<f:convertDateTime dateStyle="medium" />
+										</h:outputLabel>
+									</h:column>
+									<h:column headerText="Empresa">
+										<h:outputLabel value="#{console.empresa.nome}"/>
+									</h:column>
+									<h:column>
+										<h:commandLink  value="Remover" actionListener="#{consoleAdminBean.removeConsole({console.id})}">
+											<f:ajax execute="@form" render=":form-console-table"/>
+										</h:commandLink>
+									</h:column>
+								</h:dataTable>
+						</div>
+					</div>
+				</h:form>
+			</div>	
+		</ui:define>
+	</ui:composition>
+</html>

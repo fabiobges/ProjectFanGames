@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+#xbox360_titulo{
+	color: #0B610B;
+	
+}
+
+#lateral{
+	display: block;
+	float:left;
+	position: relative
+}
+
+#conteudo{
+	display: block;
+	float: left;
+	width: 800px;
+	position:relative;
+	margin-left: 10px;
+	text-indent: 20px;
+}
+
+
+
+.photo{
+	position: absolute;
+	width: 200px;	
+	height: 150px;
+	margin-left: 1150px	
+}
+
+.lbl_console{
+	position: relative;
+	top: 0px;
+	color: black;
+}
+
+.msg-validation{
+	font-weight: bold;
+	color: #B40404;
+	background-color: #F5A9A9;
+	border-radius: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+

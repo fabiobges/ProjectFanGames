@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	<ui:composition template="../template/tempAdmin.xhtml">
+		<ui:define name="corpo">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-offset-2 col-sm-8">
+							
+							<div id="cadastro-game" class="panel panel-default">
+								<div class="panel-heading">Cadastro Game</div>
+									<h:form id="form-cadastro-game" class="form-horizontal" >
+									<h:messages class="msg-validation"/>
+										<div class="panel-formulario-game">
+										<div class="form-group">
+											<h:outputLabel for="nome-game" value="Nome* " class="col-sm-offset-2 col-sm-2 control-label"/>
+											<div class="col-sm-4">
+												<h:inputText id="nome-game" class="form-control" value="#{adminGameBean.game.nome}" required="true"
+												 requiredMessage="O nome do game deve ser informado!" validatorMessage="O nome do game deve conter no mínimo 1 e no máximo de 100 caracteres! ">
+													<f:validateLength maximum="100" minimum="1"></f:validateLength>
+												</h:inputText>
+											</div>
+										</div>
+										<br/>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="categoria-game" value="Categoria* " />
+											<div class="col-sm-3">
+												<h:selectOneMenu id="categoria-game" class="form-control" value="#{adminGameBean.game.categoria}">
+													<f:selectItem itemLabel="Esporte" itemValue="Esporte"/>
+													<f:selectItem itemLabel="Ação" itemValue="Ação"/>
+													<f:selectItem itemLabel="RPG" itemValue="RPG"/>
+													<f:selectItem itemLabel="Luta" itemValue="Luta"/>
+													<f:selectItem itemLabel="Musical" itemValue="Musical"/>
+													<f:selectItem itemLabel="MMO" itemValue="MMO"/>
+													<f:selectItem itemLabel="Casual" itemValue="Casual"/>
+													<f:selectItem itemLabel="Aventura" itemValue="Aventura"/>
+													<f:selectItem itemLabel="Shooter" itemValue="Shooter"/>
+													<f:selectItem itemLabel="Simulação" itemValue="Simulação"/>
+													<f:selectItem itemLabel="Fitness" itemValue="Fitness"/>
+													<f:selectItem itemLabel="Estratégia" itemValue="Estratégia"/>
+													<f:selectItem itemLabel="Terror/Ação" itemValue="Terror/Ação"/>
+													<f:selectItem itemLabel="Interativo" itemValue="Interativo"/>
+												</h:selectOneMenu>
+											</div>
+										</div>
+										<br/>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="faixa-game" value="Faixa etária* "/>
+											<div class="col-sm-3">
+												<h:selectOneMenu id="faixa-game" class="form-control" value="#{adminGameBean.game.faixa}">
+													<f:selectItem itemLabel="Livre" itemValue="L"/>
+													<f:selectItem itemLabel="10" itemValue="10"/>
+													<f:selectItem itemLabel="12" itemValue="12"/>
+													<f:selectItem itemLabel="14" itemValue="14"/>
+													<f:selectItem itemLabel="16" itemValue="16"/>
+													<f:selectItem itemLabel="18" itemValue="18"/>
+												</h:selectOneMenu>
+											</div>
+										</div>
+										<br/>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="desenvolvedor-game" value="Desenvolvedor* "/>
+											<div class="col-sm-3">
+												<h:selectOneMenu id="desenvolvedor-game" class="form-control" value="#{adminGameBean.desenvolvedor.nome}">
+													<f:selectItems value="#{adminGameBean.mapDevops}" itemValue=""/>
+												</h:selectOneMenu>
+											</div>
+										</div>
+										<br/>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="console-game" value="Consoles* "/>
+											<div class="col-sm-4">
+												<p:selectManyCheckbox value="#{adminGameBean.selectedConsoles}" id="console-game" layout="grid" columns="3" >
+													<f:selectItems  value="#{adminGameBean.listConsoles}" var="console" itemValue="#{console}" itemLabel="#{console}" />
+												</p:selectManyCheckbox>
+											</div>
+										</div>
+										
+										<br/>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="desc-game" value="Descrição "/>
+											<div class="col-sm-7">
+												<h:inputTextarea id="desc-game" class="form-control" rows="6" value="#{adminGameBean.game.descricao}" required="true" 
+												requiredMessage="Uma descrição para o game deve ser inserida!" validatorMessage="A descrição deve conter no mínimo 20 e no máximo 255 caracteres! ">
+													<f:validateLength maximum="255" minimum="20"/>
+												</h:inputTextarea>
+											</div>
+										</div>
+										<div class="form-group">
+											<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label" for="dicas-game" value="Dicas "/>
+											<div class="col-sm-7">
+												<h:inputTextarea id="dicas-game" class="form-control" rows="12" value="#{adminGameBean.game.dicas}"/>
+											</div>
+										</div>
+
+										<h:commandButton type="submit" class="col-sm-offset-4 btn btn-success" value="Cadastrar" actionListener="#{adminGameBean.cadastraGame}">
+											<f:ajax execute="@form" render=":form-games-table :form-cadastro-game" ></f:ajax>
+										</h:commandButton>
+
+
+									</div>
+								</h:form>
+							</div>
+						</div>
+					</div>
+					
+						<div class="row">
+							<div class="col-sm-pull-1 col-sm-push-1 col-sm-10">
+								<div id="lista-game" class="panel panel-default">
+									<div class="panel-heading">Lista Games</div>
+									<div id="div-filtros">
+										<h:form class="form-inline" id="form-filtro-game">
+											<div class="form-group" >
+												<h:outputLabel for="id-select-filtro-console">Filtros: Consoles  </h:outputLabel>
+												<h:selectOneMenu class="select-filtro-console form-control inputs-filtro" id="id-select-filtro-console" value="#{adminGameBean.consoleFiltro}">
+													<f:selectItem itemLabel="Todos" itemValue="-1"/>
+													<f:selectItems value="#{adminGameBean.listConsoles}" var="console" itemValue="#{console}" itemLabel="#{console}" />
+													<f:ajax event="change" execute="@form" render=":form-games-table" listener="#{adminGameBean.filtroConsultaGame()}"/>
+												</h:selectOneMenu>
+											</div>
+										</h:form>
+										
+									</div>
+									<h:form id="form-games-table">
+										<h:dataTable id="games-table" styleClass="table" value="#{adminGameBean.games}" var="game" rendered="#{not empty adminGameBean.games}">
+											<f:facet name="header">Games Fan Games</f:facet>		
+											<h:column headerText="Código">
+												<h:outputLabel value="#{game.id}"/>
+											</h:column>
+											<h:column headerText="Nome">
+												<h:outputLabel value="#{game.nome}"/>
+											</h:column>
+											<h:column headerText="Desenvolvedor">
+												<h:outputLabel value="#{game.desenvolvedor.nome}"/>
+											</h:column>
+											<h:column headerText="Categoria">
+												<h:outputLabel value="#{game.categoria}"/>
+											</h:column>
+											<h:column headerText="Faixa Etária">
+												<h:outputLabel value="#{game.faixa}"/>
+											</h:column>
+											<h:column>
+												<h:commandLink value="Consultar" action="#{adminGameBean.consultaGame({game.id})}"/>
+											</h:column>
+											<h:column>
+												<h:commandLink  value="Remover" actionListener="#{adminGameBean.removeGame({game.id})}">
+													<f:ajax execute="@form" render=":form-games-table"/>
+												</h:commandLink>
+											</h:column>
+										</h:dataTable>
+									</h:form>
+								</div>
+							</div>
+						</div>
+										
+					<br/>
+					<div class="row">
+						<h:form>								
+								<div class="col-sm-offset-9 col-md-1">
+									<a class="btn btn-primary" href="http://localhost:8080/ProjetoFanGames/admin/menuAdmin.jsf">Voltar</a>
+								</div>								
+						</h:form>
+					</div>
+					<br/>
+				</div>
+		</ui:define>
+	</ui:composition>
+	
+</html>

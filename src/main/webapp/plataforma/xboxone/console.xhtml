@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	<ui:composition template="/template/tempPrincipal.xhtml">
+		<ui:define name="corpo">
+
+			<h:form>
+			
+			<p:graphicImage styleClass="photo" library="imagens" name="#{consoleBean.console.nome}.jpg"/>
+			<aside id="lateral">
+			    <p:menu>
+			        <p:submenu label="Console">
+			            <p:menuitem value="Todos os games" action="#{consoleBean.telaConsoleGames}" ajax="false" >
+			            	<f:setPropertyActionListener value="0" target="#{consoleBean.letra}"/>
+			            </p:menuitem>
+			            <p:menuitem value="Dados Técnicos" />
+			        </p:submenu>
+			        <p:submenu label="Games Categoria">
+			            <p:menuitem value="Ação" />
+			            <p:menuitem value="Aventura" />
+			            <p:menuitem value="Horror" />
+			            <p:menuitem value="RPG" />
+			            <p:menuitem value="Shmup" />
+			            <p:menuitem value="Esporte" />
+			        </p:submenu>
+			        <p:submenu label="Curiosidades">
+			            <p:menuitem value="Games mais vendidos" />
+			        </p:submenu>
+			    </p:menu>
+			    <br/>
+			</aside>	
+			<section id="conteudo">
+				<p:outputLabel value="#{consoleBean.console.descricao}"/>
+			</section>
+			
+		    </h:form>
+
+		</ui:define>
+	</ui:composition>
+
+</html>

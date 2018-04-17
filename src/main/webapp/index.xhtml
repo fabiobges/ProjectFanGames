@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<ui:composition template="/template/tempPrincipal.xhtml">
+		<ui:define name="corpo">
+                    <h:head>
+                            <h:outputStylesheet library="css" name="index.css"/>
+                            <h:outputScript library="js" name="index.js"/>
+
+                    </h:head>
+            <div class="container-fluid">
+                            
+                         <div class="row" id="galeria-img-principal">
+                                 <div class="col-sm-1">
+                                 	
+                                 </div>
+                                 <div class="col-sm-10" id="img-galeria-principal">  
+                                 	<h:form  id="img-principal-ativa">
+                                      <div class="col-sm-10">
+                                          <div class="item">
+                                          <p:graphicImage class="img-responsive img-principal-ativa"  library="imagens" name="#{indexBean.imgPrincipal}" alt="Teste"/>
+                                          <div class="container">
+                                              <div class="carousel-caption"> 
+                                                  <h:outputLabel id="id-lbn-img-principal" class="lbn-img-principal" value="#{indexBean.imgLegenda}"/>
+                                              </div>
+                                          </div>
+                                          </div>
+                                      </div>
+                                     </h:form>
+                                     <h:form>
+                                      <div class="col-sm-2" id="div-imgs-select">
+                                              <p:commandLink>                 
+                                                  <h:graphicImage class="img-responsive img-principal1 imgs-principal" library="imagens" name="principal1.jpg" alt="Teste1">
+                                                      <f:ajax execute="@form" render=":img-principal-ativa " event="mouseover" listener="#{indexBean.alteraImagemPrincipal('1')}"/>
+                                                  </h:graphicImage>
+                                              </p:commandLink>
+                                              <h:commandLink>
+                                                       <h:graphicImage class="img-responsive img-principal2 imgs-principal" library="imagens" name="principal2.jpg" alt="Teste2">
+                                                           <f:ajax execute="@form" render="img-principal-ativa" event="mouseover" listener="#{indexBean.alteraImagemPrincipal('2')}"/>
+                                                       </h:graphicImage>
+                                              </h:commandLink>
+                                              <h:commandLink>
+                                                      <span>
+                                                          <h:graphicImage class="img-responsive img-principal3 imgs-principal" library="imagens" name="principal3.jpg" alt="Teste3">
+                                                              <f:ajax execute="@form" render="img-principal-ativa" event="mouseover" listener="#{indexBean.alteraImagemPrincipal('3')}"/>
+                                                          </h:graphicImage>
+                                                      </span>
+                                              </h:commandLink>
+                                              <h:commandLink>
+                                                      <span>
+                                                          <h:graphicImage class="img-responsive img-principal4 imgs-principal" library="imagens" name="principal4.jpg" alt="Teste4">
+                                                              <f:ajax execute="@form" render="img-principal-ativa" event="mouseover" listener="#{indexBean.alteraImagemPrincipal('4')}"/>
+                                                          </h:graphicImage>
+                                                      </span>
+                                              </h:commandLink>
+                                      </div>
+                                     </h:form>
+                                 </div>
+                                 <div class="col-sm-1">
+
+                                 </div>
+                         </div>
+                     
+                     <h:form>
+                         <div class="row" id="div-thumbnails">
+                             <div class="col-sm-1">
+
+                             </div>
+                             <div class="col-sm-col-10">
+                             	<div class="col-sm-10">
+                             		<h2>ConheÃ§a alguns games</h2>
+                             	</div>
+                                 <div class="col-sm-offset-1 col-sm-3">
+                                     <h:commandLink styleClass="index_link1">
+                                         <div class="thumbnail">
+                                                 <p:graphicImage class="img-responsive" style="height: 240px;" styleClass="index_image1" library="imagens" name="link1.jpg"/>
+                                                 <div class="caption">
+                                                     <h3 class="h3-thumb">Mario Bros</h3>
+                                                     <p:outputLabel styleClass="index_label">ConheÃ§Ã£o fatos histÃ³ricos e curiosidades sobre Mario Bros</p:outputLabel>
+                                                 </div>
+                                         </div>
+                                     </h:commandLink>
+                                 </div>
+                                 <div class="col-sm-3">
+                                     <h:commandLink styleClass="index_link2">
+                                         <div class="thumbnail">
+                                             <p:graphicImage class="img-responsive" style="height: 240px;" styleClass="index_image2" library="imagens" name="link2.jpg"/>
+                                                 <div class="caption">
+                                                     <h3 class="h3-thumb">RPG</h3>
+                                                     <p:outputLabel styleClass="index_label">RPG em destaque para plataforma Playstation 4</p:outputLabel>
+                                                 </div>
+                                         </div>
+                                     </h:commandLink>
+                                 </div>
+                                 <div class="col-sm-3">
+                                     <h:commandLink styleClass="index_link3">
+                                         <div class="thumbnail">  
+                                             <p:graphicImage class="img-responsive" style="height: 240px;" styleClass="index_image3" library="imagens" name="link3.jpg"/>
+                                             <div class="caption"> 
+                                                 <h3 class="h3-thumb">AÃ§Ã£o</h3>
+                                                 <p:outputLabel styleClass="index_label">Confira o gameplay de 'Tropas Estelares'</p:outputLabel>
+                                             </div>
+                                         </div>
+                                     </h:commandLink>
+                                 </div>
+                                 <div class="col-sm-offset-1 col-sm-3">
+                                     <h:commandLink styleClass="index_link4">
+                                         <div class="thumbnail">
+                                                 <p:graphicImage class="img-responsive" style="height: 240px;" styleClass="index_image4" library="imagens" name="link1.jpg"/>
+                                                 <div class="caption">
+                                                     <h3 class="h3-thumb">Mario Bros</h3>
+                                                     <p:outputLabel styleClass="index_label">ConheÃ§Ã£o fatos histÃ³ricos e curiosidades sobre Mario Bros</p:outputLabel>
+                                                 </div>
+                                         </div>
+                                     </h:commandLink>
+                                 </div>
+                                 <div class="col-sm-3">
+                                     <h:commandLink styleClass="index_link5">
+                                         <div class="thumbnail">
+                                             <p:graphicImage class="img-responsive" style="height: 240px;" styleClass="index_image5" library="imagens" name="link2.jpg"/>
+                                                 <div class="caption">
+                                                     <h3 class="h3-thumb">RPG</h3>
+                                                     <p:outputLabel styleClass="index_label">RPG em destaque para plataforma Playstation 4</p:outputLabel>
+                                                 </div>
+                                         </div>
+                                     </h:commandLink>
+                                 </div>
+                                 <div class="col-sm-3">
+                                     <h:commandLink styleClass="index_link6">
+                                         <div class="thumbnail">  
+                                             <p:graphicImage class="img-responsive" style="height: 240px;" styleClass="index_image6" library="imagens" name="link3.jpg"/>
+                                             <div class="caption"> 
+                                                 <h3 class="h3-thumb">AÃ§Ã£o</h3>
+                                                 <p:outputLabel styleClass="index_label">Confira o gameplay de 'Tropas Estelares'</p:outputLabel>
+                                             </div>
+                                         </div>
+                                     </h:commandLink>
+                                 </div>
+                                 
+                             </div>
+                             <div class="col-sm-1">
+
+                             </div>
+                         </div>
+                     </h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</html>

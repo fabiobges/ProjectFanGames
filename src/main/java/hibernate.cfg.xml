@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+    	
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property> 
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">fanmaster</property>
+        <property name="connection.password">unlockfangames334</property>
+        <property name="connection.url">jdbc:postgresql://aa1tyvvp1cn3tso.chccoh1gqdkc.us-west-2.rds.amazonaws.com:5432/fangames</property>
+      
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- usando as configuração C3PO para pool de conexões   -->
+        <property name="c3po.min_size">5</property>
+        <property name="c3po.max.size">30</property>
+        <property name="c3po.timeout">5000</property>
+        <property name="c3po.max_statements">50</property>
+        <property name="c3po.idle_test_period">3000</property>
+      
+        <!-- Apresentação de Debug  -->
+        <property name="hibernate.generate_statistics">false</property>   
+        <property name="show_sql">true</property>
+        <property name="use_sql_comments">true</property>
+        <!-- Mapeando Classes -->
+        <property name="annotatedClasses">creazione.persistence.User</property>
+        <mapping class="br.com.fangames.console.Console"/>
+        <mapping class="br.com.fangames.consolegame.ConsoleGame"/>
+        <mapping class="br.com.fangames.game.Game"/>
+        <mapping class="br.com.fangames.desenvolvedor.Desenvolvedor"/>
+        <mapping class="br.com.fangames.empresa.Empresa"/>
+        <mapping class="br.com.fangames.user.User"/>
+        <mapping class="br.com.fangames.videogame.VideoGame"/>
+        <mapping class="br.com.fangames.youtuber.Youtuber"/>
+        <mapping class="br.com.fangames.imagem.Imagem"/>
+    </session-factory>
+</hibernate-configuration>

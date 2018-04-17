@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<ui:composition template="../template/tempAdmin.xhtml">
+		<ui:define name="corpo">
+			<h:form>
+				<div class="container-fluid" >
+					<div class="row">
+						<div class="col-md-4 ">
+							<div class="panel panel-default">
+								<div class="panel-heading">Consoles</div>
+								<h:commandLink action="#{menuAdminBean.telaConsoleAdmin}">
+									<h:graphicImage library="imagens" name="consoles.jpg" styleClass="img-responsive" style="height: 260px;"/>
+								</h:commandLink>
+							</div>
+						</div>
+						<div class="col-md-4 ">
+							<div class="panel panel-default">
+								<div class="panel-heading">Games</div>
+								<h:commandLink action="#{menuAdminBean.telaGameAdmin}">
+									<h:graphicImage library="imagens" name="games.jpg" styleClass="img-responsive" style="height: 260px"/>
+								</h:commandLink>
+							</div>
+						</div>
+						<div class="col-md-4 ">
+							<div class="panel panel-default">
+								<div class="panel-heading" >Desenvolvedores</div>
+								<h:commandLink action="#{menuAdminBean.telaDesenvolvedorAdmin}">
+									<h:graphicImage library="imagens" name="developers.jpg" styleClass="img-responsive" style="height: 260px; width: 450px;"/>
+								</h:commandLink>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="panel panel-default">
+								<div class="panel-heading">Youtubers</div>
+								<h:commandLink action="#{menuAdminBean.telaYoutuberAdmin}">
+									<h:graphicImage library="imagens" name="youtubers.jpg" styleClass="img-responsive" style="height: 260px;"/>
+								</h:commandLink>
+							</div>
+						</div>
+                                                <div class="col-md-4">
+							<div class="panel panel-default">
+								<div class="panel-heading">Publicantes</div>
+                                                                <h:commandLink action="#{menuAdminBean.telaPublicanteAdmin}">
+									<h:graphicImage library="imagens" name="publicantes.jpg" styleClass="img-responsive" style="height: 260px;"/>
+								</h:commandLink>
+							</div>
+						</div>
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</html>

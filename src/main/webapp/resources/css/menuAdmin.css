@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+.panel-heading{
+	padding-top: 1px;
+	padding-bottom: 1px;
+	font-family: arial,sans-serif;
+	font-weight: bold;
+	font-size: 13pt;
+	color: white;
+}
+
+
+
+.img-responsive:hover{
+	transition: opacity 2s;
+	opacity: 0.6;
+	
+}
+
+
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<ui:composition template="../template/tempAdmin.xhtml">
+		<ui:define name="corpo">
+			<h:head>
+				<h:outputStylesheet library="css" name="youtuberAdmin.css"></h:outputStylesheet>
+			</h:head>
+			<div class="container-fluid">
+				<h:form id="form-cadastro-youtuber">
+					<div class="row">
+						<div class="col-sm-offset-2 col-sm-8">
+							<h:messages class="msg-validation"/>
+							<div id="consulta-game" class="panel panel-default">
+							<div id="panel-head-cadastro-youtuber" class="panel-heading">Cadastro de Youtuber</div>
+								<div class="form-horizontal">
+									<div class="form-group" id="input-nome-youtuber-group">
+										<h:outputLabel class="col-sm-offset-1 col-sm-2  control-label" for="input-nome-youtuber" value="Nome* "/>
+										<div class="col-sm-5">
+											<h:inputText class="form-control" id="input-nome-youtuber" value="#{youtuberAdminBean.youtuber.nome}" required="true" requiredMessage="O nome do Youtuber deve ser informado!"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<h:outputLabel class="col-sm-offset-1 col-sm-2  control-label" for="input-desc-youtuber" value="Descrição* "/>
+										<div class="col-sm-6">
+											<h:inputTextarea class="form-control" id="input-desc-youtuber" rows="8" value="#{youtuberAdminBean.youtuber.descricao}"></h:inputTextarea>
+										</div>
+									</div>
+							
+										<h:commandButton type="submit" style="margin-bottom: 15px;" class="col-sm-offset-3 btn btn-success" value="Casdastrar">
+											<f:ajax execute="@form" render=":form-table-youtubers :form-cadastro-youtuber" listener="#{youtuberAdminBean.cadastraYoutuber}"/>
+										</h:commandButton>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</h:form>
+				<h:form id="form-table-youtubers">
+					<div class="row">
+						<div class="col-sm-pull-1 col-sm-push-1 col-sm-10">
+							<div id="consulta-game" class="panel panel-default">
+								<div id="panel-head-consulta-game" class="panel-heading">Lista Youtubers</div>
+								<h:dataTable id="table-youtubers" styleClass="table" value="#{youtuberAdminBean.youtubers}" var="youtu" rendered="#{not empty youtuberAdminBean.youtubers}">
+									<h:column headerText="Código">
+										<h:outputLabel value="#{youtu.id}"/>
+									</h:column>
+									<h:column headerText="Nome">
+										<h:outputLabel value="#{youtu.nome}"/>
+									</h:column>
+									<h:column headerText="Descrição">
+										<h:outputLabel value="#{youtu.descricao}"/>
+									</h:column>
+									<h:column headerText="Consultar">
+										<h:commandLink value="Consultar" action="#{youtuberAdminBean.consultaYoutuber({youtu.id})}"/>
+									</h:column>
+									<h:column headerText="Remover">
+										<h:commandLink value="Remover"/>
+									</h:column>
+								</h:dataTable>
+							</div>
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+
+	
+</html>

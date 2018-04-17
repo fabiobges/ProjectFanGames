@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+#texto{
+	margin: 8px 10px 10px 50px ;
+	padding-top: 10px;
+}
+
+#rodape{
+	position: relative;
+	bottom: 0px;
+	border-top: 2px solid;
+	background-color: #FFBF00;
+}
+
+#contato{
+	margin-left: 50px;
+}

@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+
+.body-login{
+	background-color: #D7DF01;
+}
+
+#login_head{
+	position: relative;
+	background-color: #D7DF01;
+	height: 150px;
+	align: center;
+	padding-top: 50px;
+}
+
+#div-logo{
+	height: 200px;
+}
+
+
+
+#login_article{
+	padding-top:20px;
+	position: relative;
+	background-color: #D7DF01;
+	height: 400px;
+}
+
+.login_logo_titulo{
+	position: relative;
+	width: 340px;
+	height: 90px;
+}
+
+.msg-validation{
+	font-weight: bold;
+	color: #B40404;
+	background-color: #F5A9A9;
+	border-radius: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+.ui-widget-content {
+	border: none;
+	color: black;
+	border-color: white; 
+}
+
+
+
+.login_entrar{
+	border-radius: 4px;
+	float: right;
+}
+
+.login_entrar:hover{
+	background-color: white;
+	color: black;
+}

@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+
+
+#div-imgs-select{
+   margin-top: -17px;
+   margin-left: -20px;
+}
+
+
+#galeria-img-principal{
+    margin-top: -20px;
+    background-image: url(../resources/imagens/vector3.png);
+    padding-top: 35px;
+    padding-bottom: 27px;
+}
+
+#div-thumbnails{
+	padding-top: 20px;
+	padding-bottom: 25px;
+}
+
+#img-galeria-principal{
+
+}
+
+.img-principal-ativa{
+    height: 450px;
+    width: 100%;
+}
+
+.imgs-principal{
+    height: 112px;
+    width: 125px;
+    margin-left: 0px;
+    padding-left: 0px;
+    top: 0px;
+    float: left;
+}
+
+.lbn-img-principal{
+    font-size: 16pt;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.index_link2:hover {
+	opacity: 0.8;
+}
+
+
+.index_link1:hover {
+	opacity: 0.5;
+}
+
+.index_link3:hover {
+	opacity: 0.8;
+}
+
+
+.index_image1{
+	height: 190px;
+}
+
+.index_image2{
+	height: 190px;
+	padding-top: 5px
+	
+}
+
+.index_image3{
+	height: 190px;
+	padding-top: 5px
+	
+}
+
+.h3-thumb{
+    text-decoration: none;
+}
+
+#thumb-principal-ativo{
+    background-color: black;
+    padding: 0px;
+    border: none;
+}
+
+.thumbnail{
+	  transition: background-color 1s;
+
+}
+
+.thumbnail:HOVER{
+	background-color: #E6E6E6;
+}
+
+/* Standard syntax 
+@keyframes example {
+    from {background-color: white;}
+    to {background-color: black;}
+}
+*/
+

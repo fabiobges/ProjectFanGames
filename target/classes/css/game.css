@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+#lateral{
+	display: block;
+	position: relative;
+	float: left;
+}
+
+#conteudo{
+	display: block;
+	position: relative;
+	float: left;
+	width: 700px;
+}
+
+.ui-galleria{
+	width: 30px;
+	
+}
+
+h1{
+	font-size: 10px;
+	color: #610B0B;
+}

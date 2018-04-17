@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	
+	
+	<ui:composition template="../template/tempAdmin.xhtml">
+		<ui:define name="corpo">
+			
+			<h:head>
+				<h:outputStylesheet library="css" name="desenvolvedorAdmin.css"/>
+			</h:head>
+			<div class="container-fluid">
+				<h:form id="form-cadastro-desenvolvedor">
+				<div class="row">
+					<div class="form-horizontal">		
+							<fieldset class="col-sm-push-1 col-sm-10 col-sm-pull-1">
+								<LEGEND>Desenvolvedor</LEGEND>
+								<h:messages class="msg-validation"/>
+								<div class="form-group">
+									<h:outputLabel class="col-sm-offset-2 col-sm-2 control-label"  for="input-nome-desenvolvedor">Nome* </h:outputLabel>
+									<div class="col-sm-3">		
+										<h:inputText  class="form-control" id="input-nome-desenvolvedor" value="#{desenvolvedorAdminBean.desenvolvedor.nome}" 
+										required="true" requiredMessage="O nome do desenvolvedor deve ser informado!"/>								
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-4 col-sm-2">	
+										<h:commandButton type="submit" class="btn btn-success" value="Cadastrar">
+											<f:ajax execute="@form" render=":form-desenvolvedor-table :form-cadastro-desenvolvedor" listener="#{desenvolvedorAdminBean.cadastraDesenvolvedor}"/>
+										</h:commandButton>
+									</div>
+								</div>
+							</fieldset>
+					 </div>
+				</div>
+			</h:form>
+			<h:form id="form-desenvolvedor-table">
+					<div class="row">
+						<div class="col-sm-pull-3 col-sm-push-3 col-sm-6">
+								<h:dataTable id="desenvolvedor-table" styleClass="table" value="#{desenvolvedorAdminBean.desenvolvedores}" var="desenv" rendered="#{not empty desenvolvedorAdminBean.desenvolvedores}" >
+									<f:facet name="header">Desenvolvedores Fan Games</f:facet>		
+									<h:column headerText="CÃ³digo">
+										<h:outputLabel value="#{desenv.id}"/>
+									</h:column>
+									<h:column headerText="Nome">
+										<h:outputLabel value="#{desenv.nome}"/>
+									</h:column>
+									<h:column>
+										<h:commandLink  value="Remover" actionListener="#{desenvolvedorAdminBean.removeDesenvolvedor({desenv.nome})}">
+											<f:ajax execute="@form" render=":form-desenvolvedor-table :form-cadastro-desenvolvedor "/>
+										</h:commandLink>
+									</h:column>
+								</h:dataTable>
+						</div>
+					</div>
+				</h:form>
+			</div>	
+		</ui:define>
+	</ui:composition>
+</html>

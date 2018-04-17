@@ -1,0 +1,121 @@
+@CHARSET "UTF-8";
+
+#div-nome-game{
+	background-color: black;
+	margin-top: -20px;
+	padding-top: 25px;
+}
+
+#div-galeria-game{
+	background-color: black;
+	padding-bottom: 30px;
+}
+
+#conteudo{
+	display: block;
+	position: relative;
+	float: left;
+	width: 1140px;
+}
+
+#game_div_panel{
+	margin-top: 9px;
+	background-color: #BDBDBD;
+	font-family:  "Times New Roman", Times, serif;
+	color: black;
+	font-size: 12pt;
+}
+
+#div-dados-game{
+	background-color: #E6E6E6;
+	padding-bottom: 30px;
+}
+
+#div-desc-youtuber{
+	margin-bottom: 20px;
+}
+
+.descricao-youtuber{
+	padding: 8px;
+	border-radius: 4px;
+	background-color: #E6E6E6;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.label-dados-game{
+	text-align: left;
+}
+
+#game_div_image{
+	display: block;
+	position: relative;
+	float: right;
+	width: 800px;
+	height: 500px;
+	margin-top: 9px;
+	background-color: white;
+}
+
+.game_panel_grid{
+	margin-left: 10px;
+	width: 290px;
+	margin-top: 10px;
+	color: white;
+}
+
+
+.game_image{
+	width: 820px;
+	height: 420px;
+}
+
+#game_div_titulo{
+	position: relative;
+	background-color: black;
+	width: 1120px;
+	height: 60px;
+}
+
+.titulo_game{
+	font-family: sans-serif;
+	font-size: 40px;
+	color: white;
+	padding-right: 600px;
+	background-color: black;
+	position: relative;
+	font-family: sans-serif;
+}
+
+.titulo_game_desc{
+	margin-top: 5px;
+	color: white;
+	font-size: 23px;
+}
+
+.descricao{
+	margin-left: 22px;
+	font-size: 20px;
+	position: relative;
+}
+
+.descricao_game{
+	margin-left: 50px;
+	position: relative;
+	
+}
+
+.msg-validation{
+	font-weight: bold;
+	color: #B40404;
+	background-color: #F5A9A9;
+	border-radius: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.li-console
+{
+   display:inline-block;
+   width:25%;
+}
